@@ -1,0 +1,9 @@
+trip_id,bike_id,start_station,end_station,duration_minutes,user_type
+1,101,Broadway & W 25th St,W 21st St & 6th Ave,12,Subscriber
+2,102,E 17th St & Broadway,Broadway & W 25th St,7,Customer
+3,103,W 21st St & 6th Ave,E 17th St & Broadway,15,Subscriber
+4,101,Broadway & W 25th St,E 17th St & Broadway,5,Subscriber
+5,104,E 17th St & Broadway,W 21st St & 6th Ave,22,Customer
+6,102,W 21st St & 6th Ave,Broadway & W 25th St,9,Subscriber
+7,103,Broadway & W 25th St,W 21st St & 6th Ave,30,Customer
+8,101,E 17th St & Broadway,Broadway & W 25th St,4,Subscriber

@@ -9,3 +9,8 @@ venv/
 
 # Project-specific
 *.csv
+
+# Airflow runtime files - regenerated automatically, not source code
+airflow/logs/
+airflow/config/airflow.cfg
+airflow/config/webserver_config.py

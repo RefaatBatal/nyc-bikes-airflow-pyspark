@@ -1,5 +1,6 @@
 from airflow.sdk import dag, task
 from datetime import datetime, timedelta
+from pathlib import Path
 
 default_args = {
     "retries": 2,
@@ -25,6 +26,10 @@ def send_failure_alert(context):
 
 def citibike_top_stations():
 
+    @task.sensor(poke_interval=30, timeout=300, mode="reschedule")
+    def wait_for_trips_file():
+        return Path("/opt/airflow/data/real_trips.csv").exists()
+    
     @task(on_failure_callback=send_failure_alert)
     def run_top_stations_analysis():
         import time
@@ -55,7 +60,7 @@ def citibike_top_stations():
             }
             es.index(index="pipeline_metrics", document=doc)
 
-    run_top_stations_analysis()
+    wait_for_trips_file() >> run_top_stations_analysis()
 
     
 citibike_top_stations()

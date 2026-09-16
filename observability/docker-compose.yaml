@@ -27,3 +27,6 @@ networks:
   default:
     name: pipeline-net
     external: true
+
+volumes:
+  es-data:

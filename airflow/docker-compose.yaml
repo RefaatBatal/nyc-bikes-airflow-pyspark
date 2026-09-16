@@ -280,3 +280,8 @@ services:
 
 volumes:
   postgres-db-volume:
+
+networks:
+  default:
+    name: pipeline-net
+    external: true

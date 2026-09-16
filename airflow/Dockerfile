@@ -8,4 +8,4 @@ RUN apt-get update && \
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
 USER airflow
-RUN pip install --no-cache-dir pyspark==4.2.0
+RUN pip install --no-cache-dir pyspark==4.2.0 elasticsearch==8.15.0
